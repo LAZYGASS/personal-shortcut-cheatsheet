@@ -246,8 +246,70 @@ kbd {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 
+/* "내가 아는 단축키" 토글 & 흐리게/숨기기 */
+.shortcut-item .desc {
+    flex: 1;
+}
+
+.known-toggle {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 6px;
+    background: #fff;
+    color: var(--accent-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    transition: all 0.15s ease;
+}
+
+.known-toggle:hover {
+    border-color: var(--accent-color);
+}
+
+.shortcut-item.known .known-toggle {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: #fff;
+}
+
+/* 아는 것: 흐리게 */
+.shortcut-item.known {
+    opacity: 0.4;
+}
+
+.shortcut-item.known:hover {
+    opacity: 1;
+}
+
+/* 숨기기 모드: 아는 것 완전히 감춤 */
+body.hide-known .shortcut-item.known {
+    display: none;
+}
+
+/* 숨기기 모드에서 남은 항목이 없는 카드는 통째로 감춤 */
+body.hide-known .card:not(:has(.shortcut-item:not(.known))) {
+    display: none;
+}
+
 /* Print Mode Adjustment */
 @media print {
+    .known-toggle {
+        display: none !important;
+    }
+
+    .shortcut-item.known {
+        opacity: 1;
+    }
+
     main {
         columns: 2 !important;
         column-gap: 1rem;
