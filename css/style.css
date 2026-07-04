@@ -277,7 +277,14 @@ footer {
 }
 
 @media (max-width: 768px) {
+    /* On mobile the stacked header is too tall for a fixed 90px offset,
+       so let it scroll away with the page instead of covering content. */
+    body {
+        padding-top: 0;
+    }
+
     header {
+        position: static;
         padding: 1rem;
     }
 
