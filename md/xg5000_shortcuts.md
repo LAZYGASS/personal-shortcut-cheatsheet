@@ -38,6 +38,7 @@
 | 잘라내기 | `Ctrl + X` |
 | 붙여넣기 | `Ctrl + V` |
 | 전체 선택 | `Ctrl + A` |
+| 객체 속성 (Properties) | `Ctrl + F3` |
 | 행 삽입 | `Ctrl + Shift + Insert` |
 | 행 삭제 | `Ctrl + Shift + Delete` |
 

@@ -39,6 +39,7 @@ const winShortcuts = [
             { desc: "잘라내기", keys: ["Ctrl", "X"] },
             { desc: "붙여넣기", keys: ["Ctrl", "V"] },
             { desc: "전체 선택", keys: ["Ctrl", "A"] },
+            { desc: "객체 속성 (Properties)", keys: ["Ctrl", "F3"] },
             { desc: "행 삽입", keys: ["Ctrl", "Shift", "Insert"] },
             { desc: "행 삭제", keys: ["Ctrl", "Shift", "Delete"] }
         ]
