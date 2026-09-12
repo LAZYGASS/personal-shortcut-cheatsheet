@@ -22,8 +22,10 @@ const xg5000Shortcuts = [
         items: [
             { desc: "가로줄 입력", keys: ["F5"] },
             { desc: "세로줄 입력", keys: ["F6"] },
-            { desc: "병렬 라인 추가", keys: ["Ctrl", "3"] },
+            { desc: "A접점 병렬연결", keys: ["Ctrl", "3"] },
+            { desc: "B접점 병렬연결", keys: ["Ctrl", "4"] },
             { desc: "연결선", keys: ["Shift", "F8"] },
+            { desc: "INSERT 모드", keys: ["Insert"] },
             { desc: "선택 모드 (커서)", keys: ["Esc"] },
             { desc: "셀 또는 심볼 삭제", keys: ["Delete"] },
             { desc: "셀 편집 확정", keys: ["Enter"] }

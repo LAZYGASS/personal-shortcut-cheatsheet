@@ -1,0 +1,5 @@
+# Vercel 빌드가 생성하는 공개 정적 파일은 원본과 분리해 관리한다.
+/public/
+/.vercel/
+
+.vercel
