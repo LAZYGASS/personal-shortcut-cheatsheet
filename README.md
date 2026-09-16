@@ -58,3 +58,11 @@ personal-shortcut-cheatsheet/
 ## Vercel 배포
 
 `node scripts/build-static-site.mjs`로 `public/`에 정적 사이트를 생성합니다. Vercel은 해당 폴더를 배포합니다. 현재 운영 방식은 Vercel 로그인 보호 Preview이며, GitHub 자동 배포는 비활성화되어 있어 push만으로 Vercel 사이트가 갱신되지 않습니다.
+
+## 검색·즐겨찾기·화면 배율
+
+- 카드 페이지에서 설명·카테고리뿐 아니라 키 조합으로 검색합니다. `Ctrl+Shift`와 `ctrl shift`처럼 입력할 수 있고 `+`, `#` 등 기호 자체도 검색할 수 있습니다.
+- 항목의 ☆를 눌러 즐겨찾기를 등록·해제하고, 상단의 **즐겨찾기만 보기**로 모아봅니다. 검색과 **아는 것 숨기기** 조건도 함께 적용됩니다. 즐겨찾기는 페이지별로 현재 브라우저에 저장됩니다.
+- 오른쪽 아래의 **− / + / 100%** 버튼으로 전체 화면 요소를 60~200%로 조절합니다. **Ctrl(Command) + + / - / 0**도 지원하며 배율은 페이지를 이동하거나 다시 열어도 유지됩니다.
+- 배율 도구는 확대해도 화면에 남고, 인쇄에는 화면 배율이 적용되지 않습니다. 문서형 Codex 페이지에는 배율 도구만 적용합니다.
+- 구현 참고: [MDN CSS zoom](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/zoom). 브라우저 자체 메뉴의 확대를 별도로 사용하면 그 배율도 영향을 줄 수 있습니다.

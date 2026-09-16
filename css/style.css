@@ -438,3 +438,42 @@ footer {
         border-bottom: 2px solid rgba(0, 0, 0, 0.03);
     }
 }
+
+/* Search/favorite state remains consistent for screen and print. */
+.shortcut-item[hidden], .card[hidden], .shortcut-empty[hidden], .storage-notice[hidden] { display: none !important; }
+.utility-button { padding: 8px 14px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; color: #334155; cursor: pointer; font: inherit; font-size: .875rem; }
+.utility-button[aria-pressed="true"] { background: #fef3c7; border-color: #d97706; color: #78350f; }
+.favorite-star { flex: 0 0 28px; width: 28px; height: 32px; padding: 0; margin-right: 6px; border: 0; border-radius: 6px; background: transparent; color: #64748b; font-size: 1.25rem; cursor: pointer; }
+.favorite-star[aria-pressed="true"] { color: #a16207; background: #fef3c7; }
+.favorite-star:focus-visible, .utility-button:focus-visible, .scale-toolbar button:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.shortcut-empty, .storage-notice { padding: 1rem; text-align: center; color: #475569; }
+.scale-toolbar { position: fixed; z-index: 200; bottom: 12px; right: 12px; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; max-width: calc(100vw - 24px); padding: 6px 10px; border: 1px solid #cbd5e1; border-radius: 12px; background: #fff; color: #334155; box-shadow: 0 2px 12px #0002; font-size: 14px; }
+.scale-toolbar button { min-width: 44px; min-height: 44px; border: 1px solid #cbd5e1; border-radius: 8px; background: #f8fafc; color: #0f172a; cursor: pointer; font: inherit; }
+.scale-toolbar button:disabled { opacity: .4; cursor: default; }
+.scale-toolbar output { min-width: 4ch; text-align: right; font-family: Consolas, monospace; font-variant-numeric: tabular-nums lining-nums; }
+.scale-notice { flex-basis: 100%; color: #9a3412; }
+.scale-notice:empty { display: none; }
+@media screen {
+    body { padding-bottom: 88px; }
+    .app-surface { zoom: var(--display-scale, 1); }
+    .compact-scale main { columns: 1; padding: 12px; }
+    .compact-scale .card { padding: 12px; }
+    .compact-scale .card-header h2 { min-width: 0; overflow-wrap: anywhere; }
+    .compact-scale .card-header .icon, .compact-scale .collapse-caret { flex-shrink: 0; }
+    .compact-scale header { padding: 12px; }
+    .compact-scale .brand { flex-wrap: wrap; }
+    .compact-scale .logo { flex-shrink: 0; }
+    .compact-scale h1, .compact-scale .app-tab { overflow-wrap: anywhere; }
+    .compact-scale .app-tab { max-width: 100%; padding: 8px; }
+    .compact-scale .shortcut-item { flex-wrap: wrap; gap: 4px; }
+    .compact-scale .shortcut-item .desc { flex-basis: calc(100% - 80px); padding-right: 0; }
+    .compact-scale .keys { max-width: 100%; width: 100%; }
+    .compact-scale .header-content { gap: 12px; }
+    .compact-scale .codex-document { padding: 12px; overflow-wrap: anywhere; }
+    .compact-scale .source-note { margin: 12px; overflow-wrap: anywhere; }
+}
+@media print {
+    .app-surface { zoom: 1 !important; }
+    .scale-toolbar, .favorite-star, .storage-notice { display: none !important; }
+    body { padding-bottom: 0; }
+}

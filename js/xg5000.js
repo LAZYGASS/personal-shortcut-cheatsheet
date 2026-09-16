@@ -95,16 +95,11 @@ const createShortcutKeysMarkup = (shortcut) => {
 
 const renderShortcuts = (filter = "") => {
     const shortcutGrid = document.getElementById("shortcutGrid");
-    const normalizedFilter = filter.toLowerCase();
 
     shortcutGrid.innerHTML = "";
 
     xg5000Shortcuts.forEach((category) => {
-        const filteredItems = category.items.filter((item) => (
-            item.desc.toLowerCase().includes(normalizedFilter)
-            || category.category.toLowerCase().includes(normalizedFilter)
-            || item.keys.join(" ").toLowerCase().includes(normalizedFilter)
-        ));
+        const filteredItems = category.items.filter(item => matchesShortcut(item, category.category, filter));
 
         if (filteredItems.length === 0) {
             return;
