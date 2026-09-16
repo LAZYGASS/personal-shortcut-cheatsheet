@@ -331,14 +331,55 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Screen layout follows the available width, including portrait monitors.
+   Keep the header in flow because wrapping navigation has a variable height. */
+@media screen {
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        position: static;
+    }
+
+    .header-content,
     main {
-        columns: 2;
+        max-width: 1920px;
+    }
+
+    main {
+        columns: 4 380px;
+    }
+
+    .header-content > *,
+    .desc,
+    .keys {
+        min-width: 0;
+    }
+
+    .app-tabs,
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        max-width: 100%;
+    }
+
+    .search-bar {
+        min-width: min(250px, 100%);
+    }
+
+    .desc,
+    .keys kbd {
+        overflow-wrap: anywhere;
+    }
+
+    .keys {
+        max-width: 60%;
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* On mobile the stacked header is too tall for a fixed 90px offset,
        so let it scroll away with the page instead of covering content. */
     body {
@@ -365,6 +406,7 @@ footer {
         padding: 1rem;
     }
 }
+
 /* === 카테고리 접기/펼치기 - 그룹화 (enhance.js) === */
 .card-header { cursor: pointer; user-select: none; }
 .collapse-caret {
