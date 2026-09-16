@@ -11,7 +11,7 @@
 |--------|------|
 | Excel (Win) | Windows 엑셀 핵심 단축키 |
 | Google Sheets | 구글 스프레드시트 단축키 |
-| Markdown | 마크다운 문법 (Obsidian 콜아웃 포함) |
+| Markdown | 마크다운 문법, 목록 종료 방법, Obsidian 콜아웃 |
 | Google Search | 구글 검색 연산자 |
 | Windows OS | 윈도우 OS 단축키 |
 | AutoCAD | 오토캐드 명령어/단축키 |
