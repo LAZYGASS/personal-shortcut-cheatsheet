@@ -14,10 +14,12 @@
 | Markdown | 마크다운 문법, 목록 종료 방법, Obsidian 콜아웃 |
 | Google Search | 구글 검색 연산자 |
 | Windows OS | 윈도우 OS 단축키 |
+| 특수문자 | 자주 쓰는 기호·단위 45개 복사, SI 표기 규칙 12개·Alt 입력 코드 검색 |
+| Chrome | Windows Chrome 단축키·검색·즐겨찾기 |
 | AutoCAD | 오토캐드 명령어/단축키 |
 | Codex | Codex CLI 한국어 치트시트 |
 | PowerPoint | 프레젠테이션 편집 단축키 |
-| XG5000 | PLC 프로그램 편집 단축키 |
+| XG5000 | PLC 편집 단축키, F0099·F009B 플래그 및 S000.00 스텝 메모 |
 | Claude Code | Claude Code CLI 단축키 (한국어) |
 | Terminal | 터미널/셸 단축키 |
 | GitHub | Git / GitHub 사용법 |

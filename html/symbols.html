@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주 쓰는 특수문자 | 단위 · 파이 · 체크 복사</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/symbols.css">
+    <style>
+        :root {
+            --accent-color: #6d28d9;
+            /* Symbols */
+        }
+
+        @media print {
+
+            header,
+            footer,
+            .search-bar {
+                display: none !important;
+            }
+
+            body {
+                padding-top: 0;
+            }
+
+            main {
+                columns: 2 !important;
+                padding: 0;
+            }
+
+            .card {
+                break-inside: avoid;
+                border: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <div class="logo">Ω</div>
+                <h1>자주 쓰는 특수문자</h1>
+            </div>
+            <nav class="app-tabs">
+                <a href="index.html" class="app-tab">Excel (Win)</a>
+                <a href="ppt.html" class="app-tab">PowerPoint</a>
+                <a href="sheets.html" class="app-tab">Google Sheets</a>
+                <a href="md.html" class="app-tab">Markdown</a>
+                <a href="google.html" class="app-tab">Google Search</a>
+                <a href="chrome.html" class="app-tab">Chrome</a>
+                <a href="win.html" class="app-tab">Windows OS</a>
+                <a href="cad.html" class="app-tab">AutoCAD</a>
+                <a href="symbols.html" class="app-tab active">특수문자</a>
+                <a href="xg5000.html" class="app-tab">XG5000</a>
+                <a href="claude.html" class="app-tab">Claude Code</a>
+                <a href="terminal.html" class="app-tab">Terminal</a>
+                <a href="github.html" class="app-tab">GitHub</a>
+                <a href="codex.html" class="app-tab">Codex</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="검색: SI, kW, 띄어쓰기, 파이, 체크…"
+                    autocomplete="off">
+                <kbd>/</kbd>
+            </div>
+            <div class="actions">
+                <button onclick="window.print()"
+                    style="padding: 8px 16px; border-radius: 8px; border: 1px solid #e2e8f0; background: white; cursor: pointer; font-size: 0.875rem; font-weight: 500;">
+                    🖨️ 인쇄하기
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="symbol-intro">
+        <p>자주 찾는 기호 45개와 SI 표기 규칙 12개를 모았습니다. <b>기호 버튼을 누르면 기호만 복사</b>됩니다. 별표로 자주 쓰는 것을 모아두세요.</p>
+        <p>파이 검색: ⌀(지름), Ø·ø(라틴 문자), Φ(피·그리스 문자), π(원주율)를 구분해서 고르세요. 단위는 복사하기 좋은 일반 문자 조합으로 제공합니다.</p>
+        <p><button type="button" class="utility-button" data-symbol-filter="SI ·">SI 규칙만 보기</button> <button type="button" class="utility-button" data-symbol-filter="">전체 보기</button> · <a href="https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf" target="_blank" rel="noopener">BIPM 공식 SI 지침 (§3–5)</a></p>
+        <details class="input-guide"><summary>빠른 입력: Alt+숫자 · 위첨자/아래첨자</summary><p><b>Windows:</b> Num Lock을 켜고 Alt를 누른 채 오른쪽 숫자패드로 코드를 입력한 뒤 Alt를 놓습니다. 위쪽 숫자열은 사용할 수 없습니다. 예: Alt+0176 → °, Alt+0178 → ², Alt+0179 → ³.</p><p>Alt 코드는 Windows 언어·코드페이지·앱에 따라 결과가 다를 수 있습니다. 앞의 0 유무도 중요합니다. ø는 서유럽 문자표 기준 Alt+0248이며, Alt+248은 프로그램·문자표에 따라 다르므로 지름이나 도 기호로 일괄 단정하지 않습니다. AutoCAD 지름 입력은 %%c입니다. 모든 프로그램에 공통인 첨자 서식 단축키는 없습니다.</p><p><b>Word:</b> U+2082 입력 → Alt+X = ₂, U+2083 → Alt+X = ₃. 이 방식은 Word 등 지원 앱용이며 Excel·PowerPoint 공통 단축키가 아닙니다.</p><p><b>여러 앱에서 반복 입력:</b> ²·³·₂·₃ 같은 문자를 복사한 뒤 Win+V에서 고정하면 다시 골라 붙여넣을 수 있습니다. 임의의 글자를 첨자로 만드는 서식과는 다릅니다.</p><p>공식 안내: <a href="https://support.microsoft.com/en-us/word/insert-degree-symbol" target="_blank" rel="noopener">도 기호</a> · <a href="https://support.microsoft.com/en-gb/word/insert-ascii-or-unicode-latin-based-symbols-and-characters" target="_blank" rel="noopener">문자 코드 입력</a></p></details>
+        <p>분수 입력: ½·¼·¾·⅓·⅔는 한 글자입니다. 분수용 빗금 ⁄로 1⁄2처럼 쓸 수도 있습니다. 숫자만 허용하는 입력칸은 이 문자도 거부할 수 있으므로 허용 형식을 확인하세요.</p>
+        <p id="copyStatus" role="status" aria-live="polite">예: 파이 · 체크 · 온도 · 제곱 · 유량 · 전압</p>
+        <div id="manualCopy" hidden><label for="copyText">자동 복사가 막혔습니다. 아래 문자를 선택해 Ctrl+C / Command+C 또는 길게 눌러 복사하세요.</label><input id="copyText" readonly></div>
+    </div>
+
+    <main id="shortcutGrid">
+        <!-- JS로 채워짐 -->
+    </main>
+
+    <footer><p>문자 구분 참고: <a href="https://www.unicode.org/charts/nameslist/n_2300.html" target="_blank" rel="noopener">Unicode 지름 기호 U+2300</a> · <a href="https://github.com/LAZYGASS/personal-shortcut-cheatsheet/blob/master/md/symbols.md">특수문자 원본 목록</a></p></footer>
+
+    <script src="../js/shortcut-tools.js"></script>
+    <script src="../js/symbols.js"></script>
+    <script src="../js/enhance.js"></script>
+    <script src="../js/display-scale.js"></script>
+</body>
+
+</html>

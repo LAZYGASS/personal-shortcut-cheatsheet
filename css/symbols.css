@@ -1,0 +1,16 @@
+.symbol-intro { max-width: 1920px; margin: 0 auto; padding: 1rem 2rem 0; overflow-wrap: anywhere; }
+.symbol-intro p + p { margin-top: .5rem; }
+#copyStatus { color: #5b21b6; min-height: 1.5em; }
+#manualCopy { margin-top: .75rem; }
+#manualCopy[hidden] { display: none; }
+#manualCopy label { display: block; }
+#copyText { width: 100%; max-width: 24rem; padding: .75rem; font: inherit; font-size: 1.25rem; border: 1px solid #7c3aed; border-radius: 8px; }
+.shortcut-item .desc small { display: block; margin-top: .25rem; color: #64748b; font-size: .8rem; }
+.symbol-copy { flex-shrink: 0; min-width: 64px; min-height: 48px; padding: .5rem; border: 1px solid #c4b5fd; border-radius: 8px; background: #f5f3ff; color: #4c1d95; font-family: 'Segoe UI Symbol', sans-serif; font-size: 1.35rem; cursor: pointer; }
+.symbol-copy:hover { background: #ede9fe; }
+.symbol-copy:focus-visible, #copyText:focus-visible { outline: 3px solid #7c3aed; outline-offset: 2px; }
+.symbol-copy:disabled { opacity: .6; cursor: wait; }
+@media screen and (max-width: 500px) { .symbol-intro { padding: 1rem; } }
+@media print { #copyStatus, #manualCopy { display: none; } .symbol-copy { border: 0; background: transparent; color: black; } }
+
+.shortcut-item .desc small { font-variant-numeric: tabular-nums lining-nums; }
