@@ -66,9 +66,6 @@ const xg5000Shortcuts = [
             { desc: "설명문 입력", keys: ["Ctrl", "E"] },
             { desc: "실행 취소", keys: ["Ctrl", "Z"] },
             { desc: "다시 실행", keys: ["Ctrl", "Y"] },
-            { desc: "복사", keys: ["Ctrl", "C"] },
-            { desc: "잘라내기", keys: ["Ctrl", "X"] },
-            { desc: "붙여넣기", keys: ["Ctrl", "V"] },
             { desc: "전체 선택", keys: ["Ctrl", "A"] }
         ]
     },
@@ -89,7 +86,6 @@ const xg5000Shortcuts = [
             { desc: "프로젝트 저장", keys: ["Ctrl", "S"] },
             { desc: "프로젝트 열기", keys: ["Ctrl", "O"] },
             { desc: "새 프로젝트", keys: ["Ctrl", "N"] },
-            { desc: "인쇄", keys: ["Ctrl", "P"] },
             { desc: "프로그램 검사 (컴파일)", keys: ["Ctrl", "Alt", "C"] },
             { desc: "온라인 접속 또는 해제", keys: ["Ctrl", "Alt", "O"] }
         ]

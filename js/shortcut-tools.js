@@ -97,7 +97,7 @@
     // Renderers replace grid children on search; row decorations do not trigger this observer.
     new MutationObserver(refresh).observe(grid, { childList: true });
     const search = document.getElementById('searchInput');
-    if (search) {
+    if (search && !search.hasAttribute('aria-label')) {
         search.placeholder = '설명 또는 단축키 검색 (예: Ctrl+Shift)';
         search.setAttribute('aria-label', '설명 또는 단축키 검색');
     }

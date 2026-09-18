@@ -58,6 +58,7 @@
                 <a href="chrome.html" class="app-tab">Chrome</a>
                 <a href="win.html" class="app-tab">Windows OS</a>
                 <a href="cad.html" class="app-tab">AutoCAD</a>
+                <a href="si.html" class="app-tab">SI 규칙</a>
                 <a href="symbols.html" class="app-tab active">특수문자</a>
                 <a href="xg5000.html" class="app-tab">XG5000</a>
                 <a href="claude.html" class="app-tab">Claude Code</a>
@@ -80,25 +81,40 @@
     </header>
 
     <div class="symbol-intro">
-        <p>자주 찾는 기호 45개와 SI 표기 규칙 12개를 모았습니다. <b>기호 버튼을 누르면 기호만 복사</b>됩니다. 별표로 자주 쓰는 것을 모아두세요.</p>
-        <p>파이 검색: ⌀(지름), Ø·ø(라틴 문자), Φ(피·그리스 문자), π(원주율)를 구분해서 고르세요. 단위는 복사하기 좋은 일반 문자 조합으로 제공합니다.</p>
-        <p><button type="button" class="utility-button" data-symbol-filter="SI ·">SI 규칙만 보기</button> <button type="button" class="utility-button" data-symbol-filter="">전체 보기</button> · <a href="https://www.bipm.org/documents/20126/41483022/SI-Brochure-9-EN.pdf" target="_blank" rel="noopener">BIPM 공식 SI 지침 (§3–5)</a></p>
-        <details class="input-guide"><summary>빠른 입력: Alt+숫자 · 위첨자/아래첨자</summary><p><b>Windows:</b> Num Lock을 켜고 Alt를 누른 채 오른쪽 숫자패드로 코드를 입력한 뒤 Alt를 놓습니다. 위쪽 숫자열은 사용할 수 없습니다. 예: Alt+0176 → °, Alt+0178 → ², Alt+0179 → ³.</p><p>Alt 코드는 Windows 언어·코드페이지·앱에 따라 결과가 다를 수 있습니다. 앞의 0 유무도 중요합니다. ø는 서유럽 문자표 기준 Alt+0248이며, Alt+248은 프로그램·문자표에 따라 다르므로 지름이나 도 기호로 일괄 단정하지 않습니다. AutoCAD 지름 입력은 %%c입니다. 모든 프로그램에 공통인 첨자 서식 단축키는 없습니다.</p><p><b>Word:</b> U+2082 입력 → Alt+X = ₂, U+2083 → Alt+X = ₃. 이 방식은 Word 등 지원 앱용이며 Excel·PowerPoint 공통 단축키가 아닙니다.</p><p><b>여러 앱에서 반복 입력:</b> ²·³·₂·₃ 같은 문자를 복사한 뒤 Win+V에서 고정하면 다시 골라 붙여넣을 수 있습니다. 임의의 글자를 첨자로 만드는 서식과는 다릅니다.</p><p>공식 안내: <a href="https://support.microsoft.com/en-us/word/insert-degree-symbol" target="_blank" rel="noopener">도 기호</a> · <a href="https://support.microsoft.com/en-gb/word/insert-ascii-or-unicode-latin-based-symbols-and-characters" target="_blank" rel="noopener">문자 코드 입력</a></p></details>
-        <p>분수 입력: ½·¼·¾·⅓·⅔는 한 글자입니다. 분수용 빗금 ⁄로 1⁄2처럼 쓸 수도 있습니다. 숫자만 허용하는 입력칸은 이 문자도 거부할 수 있으므로 허용 형식을 확인하세요.</p>
-        <p id="copyStatus" role="status" aria-live="polite">예: 파이 · 체크 · 온도 · 제곱 · 유량 · 전압</p>
-        <div id="manualCopy" hidden><label for="copyText">자동 복사가 막혔습니다. 아래 문자를 선택해 Ctrl+C / Command+C 또는 길게 눌러 복사하세요.</label><input id="copyText" readonly></div>
+        <p><b>자음 입력 → 한자 키 → 문자 선택.</b> 자주 쓰는 문자만 모았습니다. 여기서는 문자를 눌러 바로 복사하세요.</p>
+        <p id="copyStatus" role="status" aria-live="polite">ㄹ: 단위 · ㅊ: 분수/첨자 · ㄲ: Ø/ø · ㅎ: Φ/π/Ω</p>
+        <div id="manualCopy" hidden><label for="copyText">자동 복사가 막혔습니다. 선택된 문자를 Ctrl+C / Command+C 또는 길게 눌러 복사하세요.</label><input id="copyText" readonly></div>
     </div>
 
-    <main id="shortcutGrid">
+    <div class="symbol-subnav" role="tablist" aria-label="특수문자 보기">
+        <button type="button" id="symbolsTab" role="tab" aria-selected="true" aria-controls="shortcutGrid" data-symbol-view="symbols">문자 모음</button>
+        <button type="button" id="methodsTab" role="tab" aria-selected="false" aria-controls="inputMethodsPanel" tabindex="-1" data-symbol-view="methods">프로그램별 입력법</button>
+    </div>
+    <main id="shortcutGrid" class="symbol-methods" role="tabpanel" aria-labelledby="symbolsTab">
         <!-- JS로 채워짐 -->
     </main>
 
-    <footer><p>문자 구분 참고: <a href="https://www.unicode.org/charts/nameslist/n_2300.html" target="_blank" rel="noopener">Unicode 지름 기호 U+2300</a> · <a href="https://github.com/LAZYGASS/personal-shortcut-cheatsheet/blob/master/md/symbols.md">특수문자 원본 목록</a></p></footer>
+    <section id="inputMethodsPanel" class="input-methods-panel" role="tabpanel" aria-labelledby="methodsTab" hidden>
+        <p>Windows 기준 · Word는 <b>코드 입력 후 Alt+X</b>, Excel·Google Sheets는 <b>한글 입력기 또는 붙여넣기</b>, AutoCAD는 <b>문자(TEXT/MTEXT) 편집 중 코드 입력</b>입니다. 기호를 누르면 복사됩니다.</p>
+        <table class="input-methods-table">
+            <caption>자주 쓰는 문자 22개의 프로그램별 입력 방법</caption>
+            <thead><tr><th scope="col">문자</th><th scope="col">Word</th><th scope="col">Excel · Google Sheets</th><th scope="col">AutoCAD</th></tr></thead>
+            <tbody id="inputMethodsRows"></tbody>
+        </table>
+        <p id="inputMethodsEmpty" role="status" hidden>일치하는 입력법이 없습니다. 검색어를 바꿔보세요.</p>
+        <details class="method-details"><summary>입력할 때 알아둘 점 · 출처</summary>
+            <p>Alt+X는 Word 등 지원 앱용입니다. Excel·Google Sheets·AutoCAD 공통 단축키가 아닙니다. Alt 숫자 코드는 Num Lock을 켜고 숫자패드로 입력하며, Windows 언어·앱에 따라 결과가 다를 수 있습니다.</p>
+            <p>표의 ²·₂ 등은 문자 자체입니다. Excel에서 임의의 글자에 첨자 서식을 적용하려면 셀 편집 중 글자를 선택하고 Ctrl+1 → 위 첨자/아래 첨자를 사용합니다. Google Sheets에서는 해당 문자 복사를 이용하세요. 숫자 셀에 단위·분수를 문자로 붙이면 계산용 숫자와는 달라집니다.</p>
+            <p>AutoCAD 코드는 명령줄이 아니라 문자 편집 영역에 넣습니다. %%c는 지름을 표시하며 글꼴에 따라 모양이 다를 수 있습니다. Unicode 문자는 지원 글꼴이 필요합니다. 임의 분수를 위아래로 쌓으려면 MTEXT에서 1/2 입력 → 선택 → 우클릭 → 스택(Stack)을 사용합니다.</p>
+            <p><a href="https://support.microsoft.com/en-gb/word/insert-ascii-or-unicode-latin-based-symbols-and-characters" target="_blank" rel="noopener">Microsoft 문자 코드</a> · <a href="https://support.microsoft.com/en-us/excel/format-text-or-numbers-as-superscript-or-subscript" target="_blank" rel="noopener">Excel 첨자 서식</a> · <a href="https://www.autodesk.com/blogs/autocad/adding-diameter-symbol-autocad-drawings/" target="_blank" rel="noopener">AutoCAD 지름·Unicode</a> · <a href="https://help.autodesk.com/cloudhelp/2025/ENU/AutoCAD-LT-MAC/files/GUID-518E1A9D-398C-4A8A-AC32-2D85590CDBE1.htm" target="_blank" rel="noopener">AutoCAD 문자 코드표</a></p>
+        </details>
+    </section>
 
-    <script src="../js/shortcut-tools.js"></script>
+    <footer><p>Windows 한글 입력기 기준이며, 입력기·버전에 따라 후보 목록은 다를 수 있습니다. <a href="https://learn.microsoft.com/en-us/globalization/input/korean-ime" target="_blank" rel="noopener">Microsoft 입력기 안내</a> · <a href="https://github.com/libhangul/libhangul/blob/main/data/hanja/mssymbol.txt" target="_blank" rel="noopener">자음별 문자표 대조</a></p><p>문자 구분 참고: <a href="https://www.unicode.org/charts/nameslist/n_2300.html" target="_blank" rel="noopener">Unicode 지름 기호 U+2300</a> · <a href="https://github.com/LAZYGASS/personal-shortcut-cheatsheet/blob/master/md/symbols.md">특수문자 원본 목록</a></p></footer>
+
     <script src="../js/symbols.js"></script>
-    <script src="../js/enhance.js"></script>
-    <script src="../js/display-scale.js"></script>
+    <script src="../js/shortcut-tools.js"></script>
+    <script src="../js/symbol-input-methods.js"></script>
 </body>
 
 </html>

@@ -8,7 +8,6 @@ const winShortcuts = [
             { desc: "저장하기", keys: ["Ctrl", "S"] },
             { desc: "작업 취소 (Undo)", keys: ["Ctrl", "Z"] },
             { desc: "다시 실행 (Redo)", keys: ["Ctrl", "Y"] },
-            { desc: "복사 / 붙여넣기", keys: ["Ctrl", "C/V"] },
             { desc: "슬라이드/개체 복제", keys: ["Ctrl", "D"] },
             { desc: "찾기", keys: ["Ctrl", "F"] },
             { desc: "바꾸기", keys: ["Ctrl", "H"] },
@@ -24,7 +23,6 @@ const winShortcuts = [
             { desc: "다른 이름으로 저장", keys: ["F12"] },
             { desc: "프레젠테이션 열기", keys: ["Ctrl", "O"] },
             { desc: "새 프레젠테이션", keys: ["Ctrl", "N"] },
-            { desc: "인쇄하기", keys: ["Ctrl", "P"] },
             { desc: "도움말 열기", keys: ["F1"] },
             { desc: "창 닫기", keys: ["Ctrl", "W"] },
             { desc: "파워포인트 종료", keys: ["Alt", "F4"] }
