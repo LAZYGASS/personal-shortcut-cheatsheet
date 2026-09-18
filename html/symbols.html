@@ -81,7 +81,7 @@
     </header>
 
     <div class="symbol-intro">
-        <p><b>자음 입력 → 한자 키 → 문자 선택.</b> 자주 쓰는 문자만 모았습니다. 여기서는 문자를 눌러 바로 복사하세요.</p>
+        <p><b>자음 입력 → 한자 키 → 문자 선택.</b> 쌍자음을 포함한 18개 조합의 문자 988개를 모았습니다. 여기서는 문자를 눌러 바로 복사하세요.</p>
         <p id="copyStatus" role="status" aria-live="polite">ㄹ: 단위 · ㅊ: 분수/첨자 · ㄲ: Ø/ø · ㅎ: Φ/π/Ω</p>
         <div id="manualCopy" hidden><label for="copyText">자동 복사가 막혔습니다. 선택된 문자를 Ctrl+C / Command+C 또는 길게 눌러 복사하세요.</label><input id="copyText" readonly></div>
     </div>
@@ -110,8 +110,9 @@
         </details>
     </section>
 
-    <footer><p>Windows 한글 입력기 기준이며, 입력기·버전에 따라 후보 목록은 다를 수 있습니다. <a href="https://learn.microsoft.com/en-us/globalization/input/korean-ime" target="_blank" rel="noopener">Microsoft 입력기 안내</a> · <a href="https://github.com/libhangul/libhangul/blob/main/data/hanja/mssymbol.txt" target="_blank" rel="noopener">자음별 문자표 대조</a></p><p>문자 구분 참고: <a href="https://www.unicode.org/charts/nameslist/n_2300.html" target="_blank" rel="noopener">Unicode 지름 기호 U+2300</a> · <a href="https://github.com/LAZYGASS/personal-shortcut-cheatsheet/blob/master/md/symbols.md">특수문자 원본 목록</a></p></footer>
+    <footer><p>MS 호환 문자표 18개 조합·988개 기준입니다. ㅉ은 참조 문자표에 목록이 없습니다. 실제 Windows 입력기·버전의 후보와는 차이가 있을 수 있습니다. <a href="https://learn.microsoft.com/en-us/globalization/input/korean-ime" target="_blank" rel="noopener">Microsoft 입력기 안내</a> · <a href="https://github.com/libhangul/libhangul/blob/386f73c85f28b63604cd2ccb65e3ef497e213ff8/data/hanja/mssymbol.txt" target="_blank" rel="noopener">자음별 문자표 대조</a></p><p>문자 구분 참고: <a href="https://www.unicode.org/charts/nameslist/n_2300.html" target="_blank" rel="noopener">Unicode 지름 기호 U+2300</a> · <a href="https://github.com/LAZYGASS/personal-shortcut-cheatsheet/blob/master/md/symbols.md">특수문자 원본 목록</a></p></footer>
 
+    <script src="../js/hanja-symbols.js"></script>
     <script src="../js/symbols.js"></script>
     <script src="../js/shortcut-tools.js"></script>
     <script src="../js/symbol-input-methods.js"></script>

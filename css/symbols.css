@@ -46,3 +46,5 @@ main.symbol-methods { columns: auto; display: grid; gap: 12px; }
     .input-methods-table td::before { content: attr(data-label); display: block; font-weight: 700; font-size: .8rem; color: #6d28d9; margin-bottom: 4px; }
 }
 @media print { .symbol-subnav { display: none; } .input-methods-table tr { break-inside: avoid; } }
+
+.method-expand { cursor: pointer; color: #6d28d9; font-size: .85rem; padding: 4px 0 10px; }

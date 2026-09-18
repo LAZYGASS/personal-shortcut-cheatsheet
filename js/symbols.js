@@ -511,6 +511,28 @@ const symbolMethods = [
     ]
   }
 ];
+// Expand to the complete reference table, keeping existing descriptions/favorite identities.
+const previousSymbolDetails = new Map(symbolMethods.flatMap(group => group.items.map(item => [item.symbol, item])));
+const additionalSymbolGroups = symbolMethods.filter(group => !group.category.includes('한자'));
+const preferredKeys = ['ㄹ', 'ㅊ', 'ㄲ', 'ㅎ'];
+const orderedHanjaGroups = [...hanjaSymbolGroups].sort((a, b) => {
+    const rank = key => preferredKeys.includes(key) ? preferredKeys.indexOf(key) : 4 + hanjaSymbolGroups.findIndex(group => group.key === key);
+    return rank(a.key) - rank(b.key);
+});
+symbolMethods.splice(0, symbolMethods.length, ...orderedHanjaGroups.map(group => ({
+    category: group.key + ' + 한자',
+    label: group.label + ' · ' + group.symbols.length + '개',
+    collapsible: true,
+    expanded: preferredKeys.includes(group.key),
+    note: group.key + ' 입력 후 한자 키. MS 호환 문자표 기준 전체 후보입니다. 입력기·버전에 따라 다를 수 있습니다.',
+    items: group.symbols.map(symbol => previousSymbolDetails.get(symbol) || ({
+        symbol,
+        desc: symbol === '　' ? '전각 공백' : symbol === '\u00ad' ? '연성 하이픈 (보이지 않을 수 있음)' : symbol + ' · ' + group.label,
+        aliases: 'U+' + symbol.codePointAt(0).toString(16).toUpperCase().padStart(4, '0'),
+        example: '',
+        inputHint: group.key + ' → 한자'
+    }))
+})), ...additionalSymbolGroups);
 (() => {
     const grid = document.getElementById('shortcutGrid');
     const search = document.getElementById('searchInput');
@@ -553,12 +575,16 @@ const symbolMethods = [
             const card = make('section', 'card method-row');
             const heading = make('div', 'method-heading');
             heading.append(make('h2', '', group.category), make('p', '', group.label));
-            const content = make('div', 'method-content');
+            const content = make(group.collapsible ? 'details' : 'div', 'method-content');
+            if (group.collapsible) {
+                content.open = Boolean(query || group.expanded);
+                content.append(make('summary', 'method-expand', items.length + '개 문자 ' + (query ? '검색 결과' : '펼치기 / 접기')));
+            }
             const list = make('ul', 'shortcut-list symbol-strip');
             for (const item of items) {
                 const row = make('li', 'shortcut-item symbol-chip');
                 row.append(make('span', 'desc symbol-sr-only', fullDescription(item)));
-                const button = make('button', 'symbol-copy', item.symbol);
+                const button = make('button', 'symbol-copy', item.symbol === '　' ? '공백' : item.symbol === '\u00ad' ? '하이픈' : item.symbol);
                 button.type = 'button';
                 button.dataset.symbol = item.symbol;
                 button.setAttribute('aria-label', item.desc + ' 복사: ' + item.symbol);

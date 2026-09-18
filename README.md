@@ -15,7 +15,7 @@
 | Google Search | 구글 검색 연산자 |
 | Windows OS | 윈도우 OS 단축키 |
 | SI 규칙 | kW 대소문자·띄어쓰기·접두어 등 표기 규칙 12개 |
-| 특수문자 | 자음+한자별 가로 목록·복사 및 Word/Excel·Sheets/AutoCAD 입력법 비교표 |
+| 특수문자 | 쌍자음 포함 자음+한자 18개 조합·988개 문자 목록·복사 및 Word/Excel·Sheets/AutoCAD 입력법 비교표 |
 | Chrome | Windows Chrome 단축키·검색·즐겨찾기 |
 | AutoCAD | 오토캐드 명령어/단축키 |
 | Codex | Codex CLI 한국어 치트시트 |
