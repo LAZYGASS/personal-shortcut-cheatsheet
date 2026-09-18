@@ -1,12 +1,13 @@
 # 작업 기록
 
-## 2026-09-18 — SI 규칙·입력 코드·분수 및 Git 게시 준비
+## 2026-09-18 — SI 규칙·입력 코드·분수 및 Git 게시
 
 - 특수문자 45개와 SI 규칙 12개를 제공한다. BIPM SI Brochure V4.01 §2–5를 참고해 kW, 띄어쓰기, 접두어, 온도, 복합 단위를 정리했다.
 - Alt 숫자패드/Word Alt+X 안내와 Φ의 피(phi) 명칭을 보완했다. ø·Ø와 지름 전용 ⌀를 구분하고 Alt+248의 앱·문자표 차이를 명시했다. 실제 사용자 앱의 Alt 입력 결과는 미확인이다.
 - 요청한 한 글자 분수 ½·¼·¾·⅓·⅔ 및 분수용 빗금 ⁄를 클릭 복사와 검색에 추가했다.
 - 최신 origin/master의 8개 커밋을 보존한 별도 작업 폴더에서 XG5000 메모, Chrome 메뉴, 특수문자 및 SI 안내를 통합했다. 기존 로컬 AutoCAD·Excel 별도 변경과 PDF 등은 보존했다.
 - 검증: 전체 JS 문법·정적 빌드·diff 공백 검사 통과. 실제 Edge에서 45개 기호/12개 SI 규칙, 분수 6개 클립보드 일치, 즐겨찾기·배율 유지, 390px 60/200%, 인쇄 배율, 전체 14개 메뉴 및 원격 XG5000 병렬접점 항목 보존 확인.
+- 기능 커밋 6d5225f를 origin/master에 push하고 GitHub 원격 SHA·필수 문서 3개·Description·Topics를 확인했다.
 - README·TODO·WORKLOG 및 한글 Description·기존 Topics와 unicode/si-units를 확인·갱신했다. GitHub push 대상은 origin/master이며 Vercel 재배포는 범위에 포함하지 않는다.
 
 

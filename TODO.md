@@ -5,7 +5,7 @@
 - [x] R8-13 | SI 표기 규칙 12개와 공식 출처·빠른 필터 | 특수문자 화면·원본 문서 | 증거: 빌드 화면 SI 12개 필터·검색, 복사·즐겨찾기·배율 확인
 - [x] R8-15 | Alt 코드·첨자 입력 안내와 Φ 명칭 정정 | 특수문자 화면·원본 | 증거: Alt0248 검색·ø 실제 복사 확인. 사용자 앱 Alt 키 입력은 미검증으로 구분
 - [x] R8-16 | 분수 문자 6개 추가 | 특수문자 화면·문서 | 증거: ½·¼·¾·⅓·⅔·⁄ 실제 클립보드 일치 및 모바일 200% 확인
-- [ ] R8-14 | 최신 원격 보존 후 변경 push | origin/master·README·TODO·WORKLOG | 원격 SHA·문서·Description·Topics 확인
+- [x] R8-14 | 최신 원격 보존 후 변경 push | origin/master·README·TODO·WORKLOG | 증거: 6d5225f push 후 원격 SHA, README·TODO·WORKLOG blob 및 Description·Topics 확인
 
 ## 자주 쓰는 특수문자
 
