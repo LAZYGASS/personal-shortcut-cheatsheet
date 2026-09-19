@@ -2,4 +2,8 @@
 /public/
 /.vercel/
 
-.vercel
+# 로컬 도구 설정과 재생성 가능한 임시 파일
+/.claude/
+~$*
+__pycache__/
+*.pyc

@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+process.chdir(path.resolve(__dirname, '../..'));
 
 // 1. Create directories
 if (!fs.existsSync('md')) fs.mkdirSync('md');
@@ -34,7 +35,7 @@ const redirectHtml = `<!DOCTYPE html>
 fs.writeFileSync('index.html', redirectHtml);
 
 // 4. Update generate_md.js
-let genCode = fs.readFileSync('generate_md.js', 'utf8');
+let genCode = fs.readFileSync(path.join(__dirname, 'generate_md.js'), 'utf8');
 // Change output paths to md/
 genCode = genCode.replace(/'([a-z_]+_shortcuts\.md)'/g, "'md/$1'");
 
@@ -49,6 +50,6 @@ eval(googleObjStr + '; googleData = googleShortcuts;');
 fs.writeFileSync('md/google_search_shortcuts.md', formatAsMarkdown('Google Search Commands', googleData));
 `;
 }
-fs.writeFileSync('generate_md.js', genCode);
+fs.writeFileSync(path.join(__dirname, 'generate_md.js'), genCode);
 
 console.log("Reorganization complete!");

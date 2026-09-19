@@ -47,13 +47,23 @@
 ```
 personal-shortcut-cheatsheet/
 ├─ index.html          # 루트 → html/index.html로 리다이렉트
-├─ html/               # 각 치트시트 페이지 (index, sheets, md, google, win, cad, claude, terminal, github)
-├─ css/style.css       # 공통 스타일시트
-├─ js/                 # 페이지별 데이터/렌더 스크립트 + known.js(공용: 아는 것 표시/숨기기)
+├─ html/               # 각 치트시트 페이지
+├─ css/                # 공통·특수문자 스타일시트
+├─ js/                 # 페이지 데이터·렌더링·공통 도구
 ├─ md/                 # 마크다운 원본 데이터
+├─ scripts/            # 정적 빌드·엑셀 생성 도구
+│  └─ legacy/          # 과거 생성·일회성 변경 스크립트
+├─ exports/            # 엑셀 참고 파일
+├─ docs/               # 프로젝트 구조 안내
 ├─ CHANGELOG.md        # 변경 이력
-└─ TODO.md             # 할 일 목록
+├─ WORKLOG.md          # 작업·검증 기록
+└─ TODO.md             # 요구사항·할 일 목록
 ```
+
+파일 배치 기준과 로컬 생성물은 [폴더 구조 안내](docs/folder-structure.md)를 참고하세요.
+엑셀 참고 파일은 [exports/Excel_Shortcuts_Reference.xlsx](exports/Excel_Shortcuts_Reference.xlsx)에 있습니다.
+`python scripts/generate_excel.py`로 다시 생성할 수 있습니다(pandas·openpyxl 필요, 기존 파일을 덮어씀).
+`scripts/legacy/`는 과거 작업 보관용이며 현재 사이트 실행·빌드에는 사용하지 않습니다.
 
 ---
 **단축키를 까먹었을 때 당황하지 말고 치트시트를 켜세요! 🚀**

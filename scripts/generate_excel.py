@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pandas as pd
 
 data = [
@@ -13,13 +15,15 @@ data = [
 ]
 
 df = pd.DataFrame(data[1:], columns=data[0])
-output_path = "c:/Users/bdmbo/Desktop/INVENTORY/cheat-sheet/Excel_Shortcuts_Reference.xlsx"
+output_directory = Path(__file__).resolve().parent.parent / "exports"
+output_directory.mkdir(parents=True, exist_ok=True)
+output_path = output_directory / "Excel_Shortcuts_Reference.xlsx"
 
 try:
     df.to_excel(output_path, index=False)
     print(f"Success: {output_path}")
 except Exception as e:
     # If to_excel fails (maybe missing openpyxl), try CSV
-    csv_path = "c:/Users/bdmbo/Desktop/INVENTORY/cheat-sheet/Excel_Shortcuts_Reference.csv"
+    csv_path = output_directory / "Excel_Shortcuts_Reference.csv"
     df.to_csv(csv_path, index=False)
     print(f"Excel failed, created CSV instead: {csv_path}")

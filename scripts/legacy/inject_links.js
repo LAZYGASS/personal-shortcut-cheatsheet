@@ -1,4 +1,5 @@
 const fs = require('fs');
+process.chdir(require('path').resolve(__dirname, '../..'));
 
 const links = {
     'index.html': 'excel_shortcuts.md',
