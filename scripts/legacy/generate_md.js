@@ -1,4 +1,5 @@
 const fs = require('fs');
+process.chdir(require('path').resolve(__dirname, '../..'));
 
 function formatAsMarkdown(title, dataArray) {
     let md = `# ${title}\n\n`;

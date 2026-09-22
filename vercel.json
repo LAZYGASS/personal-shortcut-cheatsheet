@@ -1,0 +1,9 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node scripts/build-static-site.mjs",
+  "outputDirectory": "public",
+  "public": false,
+  "git": {
+    "deploymentEnabled": false
+  }
+}

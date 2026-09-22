@@ -407,6 +407,38 @@ footer {
     }
 }
 
+/* === 카테고리 접기/펼치기 - 그룹화 (enhance.js) === */
+.card-header { cursor: pointer; user-select: none; }
+.collapse-caret {
+    margin-left: auto;
+    font-size: 0.9rem;
+    color: #94a3b8;
+    transition: transform 0.2s ease;
+}
+.card.collapsed .collapse-caret { transform: rotate(-90deg); }
+.card.collapsed .shortcut-list { display: none; }
+.card.collapsed .card-header {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.enh-toggle.active {
+    background: #1d6f42 !important;
+    color: #fff !important;
+    border-color: #1d6f42 !important;
+}
+
+@media print {
+    .collapse-caret, .enh-toggle { display: none !important; }
+    .card.collapsed .shortcut-list { display: block !important; }
+    .card.collapsed .card-header {
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.03);
+    }
+}
+
 /* Search/favorite state remains consistent for screen and print. */
 .shortcut-item[hidden], .card[hidden], .shortcut-empty[hidden], .storage-notice[hidden] { display: none !important; }
 .utility-button { padding: 8px 14px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; color: #334155; cursor: pointer; font: inherit; font-size: .875rem; }

@@ -1,4 +1,4 @@
-const winShortcuts = [
+const xg5000Shortcuts = [
     {
         category: "PLC 플래그 메모 (XGB 계열 참고)",
         color: "#DA291C",
@@ -21,122 +21,139 @@ const winShortcuts = [
             { desc: "F009B와 S000.00 연결 — 시작 첫 스캔에 초기 스텝을 설정하는 용도로 조합할 수 있습니다. 실제 초기화 방식·유지 설정은 해당 CPU와 프로그램에서 확인합니다. 사용자 프로그램에서 이 연결이 구현됐는지는 미확인입니다.", keys: [] }
         ]
     },
+
     {
-        category: "LD 심볼 입력 (핵심)",
-        color: "#DA291C", // LS ELECTRIC Red
-        icon: "⭐",
+        category: "LD 심볼 입력",
+        color: "#DA291C",
+        icon: "⚡",
         items: [
-            { desc: "평상시 열린 접점 ─┤├─", keys: ["F3"] },
-            { desc: "평상시 닫힌 접점 ─┤/├─", keys: ["F4"] },
-            { desc: "양변환 검출 접점 ─┤P├─", keys: ["Shift", "F1"] },
-            { desc: "음변환 검출 접점 ─┤N├─", keys: ["Shift", "F2"] },
-            { desc: "코일 ─( )─", keys: ["F9"] },
-            { desc: "셋(Set) 코일 ─(S)─", keys: ["Shift", "F3"] },
-            { desc: "리셋(Reset) 코일 ─(R)─", keys: ["Shift", "F4"] },
-            { desc: "양변환 검출 코일 ─(P)─", keys: ["Shift", "F5"] },
-            { desc: "응용명령 (Instruction)", keys: ["F10"] }
+            { desc: "A 접점 (평상시 열린 접점)", keys: ["F3"] },
+            { desc: "B 접점 (평상시 닫힌 접점)", keys: ["F4"] },
+            { desc: "양변환 검출 접점 (P 입력)", keys: ["Shift", "F1"] },
+            { desc: "음변환 검출 접점 (N 입력)", keys: ["Shift", "F2"] },
+            { desc: "출력 코일", keys: ["F9"] },
+            { desc: "SET 코일", keys: ["Shift", "F3"] },
+            { desc: "RESET 코일", keys: ["Shift", "F4"] },
+            { desc: "양변환 검출 코일", keys: ["Shift", "F5"] },
+            { desc: "타이머·응용명령 펑션 불러오기", keys: ["F10"] }
         ]
     },
     {
-        category: "라인 & 연결 (Line)",
-        color: "#0072CE", // Blue
+        category: "라인과 연결",
+        color: "#0072CE",
         icon: "📏",
         items: [
-            { desc: "가로선 입력", keys: ["F5"] },
-            { desc: "세로선 입력", keys: ["F6"] },
+            { desc: "가로줄 입력", keys: ["F5"] },
+            { desc: "세로줄 입력", keys: ["F6"] },
+            { desc: "A접점 병렬연결", keys: ["Ctrl", "3"] },
+            { desc: "B접점 병렬연결", keys: ["Ctrl", "4"] },
             { desc: "연결선", keys: ["Shift", "F8"] },
+            { desc: "INSERT 모드", keys: ["Insert"] },
             { desc: "선택 모드 (커서)", keys: ["Esc"] },
-            { desc: "셀 / 심볼 삭제", keys: ["Delete"] },
-            { desc: "셀 편집 (입력 확정)", keys: ["Enter"] }
+            { desc: "셀 또는 심볼 삭제", keys: ["Delete"] },
+            { desc: "셀 편집 확정", keys: ["Enter"] }
         ]
     },
     {
-        category: "편집 (Edit)",
-        color: "#8764b8", // Purple
+        category: "편집",
+        color: "#8764B8",
         icon: "✏️",
         items: [
-            { desc: "실행 취소 (Undo)", keys: ["Ctrl", "Z"] },
-            { desc: "다시 실행 (Redo)", keys: ["Ctrl", "Y"] },
-            { desc: "전체 선택", keys: ["Ctrl", "A"] },
-            { desc: "객체 속성 (Properties)", keys: ["Ctrl", "F3"] },
-            { desc: "행 삽입", keys: ["Ctrl", "Shift", "Insert"] },
-            { desc: "행 삭제", keys: ["Ctrl", "Shift", "Delete"] }
+            { desc: "줄 삭제", keys: ["Ctrl", "D"] },
+            { desc: "줄 삽입", keys: ["Ctrl", "L"] },
+            { desc: "칸 삭제", keys: ["Ctrl", "T"] },
+            { desc: "칸 삽입", keys: ["Ctrl", "I"] },
+            { desc: "설명문 입력", keys: ["Ctrl", "E"] },
+            { desc: "실행 취소", keys: ["Ctrl", "Z"] },
+            { desc: "다시 실행", keys: ["Ctrl", "Y"] },
+            { desc: "전체 선택", keys: ["Ctrl", "A"] }
         ]
     },
     {
-        category: "파일 & 일반 (File)",
-        color: "#34A853", // Green
+        category: "시뮬레이션",
+        color: "#34A853",
+        icon: "▶",
+        items: [
+            { desc: "시뮬레이터 시작", keys: ["Alt", "T", "S"], separator: "→" },
+            { desc: "시뮬레이션 종료", keys: ["Alt", "T", "E"], separator: "→" }
+        ]
+    },
+    {
+        category: "파일과 일반",
+        color: "#00B7C3",
         icon: "📁",
         items: [
             { desc: "프로젝트 저장", keys: ["Ctrl", "S"] },
             { desc: "프로젝트 열기", keys: ["Ctrl", "O"] },
             { desc: "새 프로젝트", keys: ["Ctrl", "N"] },
             { desc: "프로그램 검사 (컴파일)", keys: ["Ctrl", "Alt", "C"] },
-            { desc: "온라인 접속 / 해제", keys: ["Ctrl", "Alt", "O"] }
+            { desc: "온라인 접속 또는 해제", keys: ["Ctrl", "Alt", "O"] }
         ]
     },
     {
-        category: "찾기 & 보기 (Find & View)",
-        color: "#00b7c3", // Cyan
+        category: "찾기와 보기",
+        color: "#F29900",
         icon: "🔍",
         items: [
             { desc: "찾기", keys: ["Ctrl", "F"] },
             { desc: "바꾸기", keys: ["Ctrl", "H"] },
             { desc: "디바이스 찾기", keys: ["Ctrl", "F2"] },
-            { desc: "확대 / 축소", keys: ["Ctrl", "마우스휠"] },
-            { desc: "모니터 시작 / 끝", keys: ["Ctrl", "M"] },
+            { desc: "확대 또는 축소", keys: ["Ctrl", "마우스휠"] },
+            { desc: "모니터 시작 또는 종료", keys: ["Ctrl", "M"] },
             { desc: "다음 창으로 이동", keys: ["Ctrl", "Tab"] }
         ]
     }
 ];
 
-function renderShortcuts(filter = "") {
-    const grid = document.getElementById('shortcutGrid');
-    grid.innerHTML = "";
+const createShortcutKeysMarkup = (shortcut) => {
+    const separator = shortcut.separator ?? "+";
+    const separatorMarkup = `<span style="font-size: 0.75rem; margin: 0 3px;">${separator}</span>`;
 
-    winShortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
+    return shortcut.keys.map((key) => `<kbd>${key}</kbd>`).join(separatorMarkup);
+};
 
-        if (filteredItems.length > 0) {
-            const card = document.createElement('section');
-            card.className = "card";
-            card.style.setProperty('--accent-color', cat.color);
+const renderShortcuts = (filter = "") => {
+    const shortcutGrid = document.getElementById("shortcutGrid");
 
-            let itemsHtml = filteredItems.map(item => `
-                <li class="shortcut-item">
-                    <span class="desc">${item.desc}</span>
-                    <div class="keys">
-                        ${item.keys.map(key => `<kbd>${key}</kbd>`).join('<span style="font-size: 0.6rem; margin: 0 1px;">+</span>')}
-                    </div>
-                </li>
-            `).join('');
+    shortcutGrid.innerHTML = "";
 
-            card.innerHTML = `
-                <div class="card-header">
-                    <span class="icon">${cat.icon}</span>
-                    <h2>${cat.category}</h2>
-                </div>
-                <ul class="shortcut-list">
-                    ${itemsHtml}
-                </ul>
-            `;
-            grid.appendChild(card);
+    xg5000Shortcuts.forEach((category) => {
+        const filteredItems = category.items.filter(item => matchesShortcut(item, category.category, filter));
+
+        if (filteredItems.length === 0) {
+            return;
         }
-    });
-}
 
-// Initial Render
+        const shortcutItemsMarkup = filteredItems.map((item) => `
+            <li class="shortcut-item">
+                <span class="desc">${item.desc}</span>
+                <div class="keys">${createShortcutKeysMarkup(item)}</div>
+            </li>
+        `).join("");
+
+        const shortcutCard = document.createElement("section");
+        shortcutCard.className = "card";
+        shortcutCard.style.setProperty("--accent-color", category.color);
+        shortcutCard.innerHTML = `
+            <div class="card-header">
+                <span class="icon">${category.icon}</span>
+                <h2>${category.category}</h2>
+            </div>
+            <ul class="shortcut-list">${shortcutItemsMarkup}</ul>
+        `;
+        shortcutGrid.appendChild(shortcutCard);
+    });
+};
+
 renderShortcuts();
 
-// Search Logic
-document.getElementById('searchInput').addEventListener('input', (e) => {
-    renderShortcuts(e.target.value);
+document.getElementById("searchInput").addEventListener("input", (event) => {
+    renderShortcuts(event.target.value);
 });
 
-// Keyboard Focus for Search
-window.addEventListener('keydown', (e) => {
-    if (e.key === '/' && document.activeElement.tagName !== 'INPUT') {
-        e.preventDefault();
-        document.getElementById('searchInput').focus();
+window.addEventListener("keydown", (event) => {
+    if (event.key === "/" && document.activeElement.tagName !== "INPUT") {
+        event.preventDefault();
+        document.getElementById("searchInput").focus();
     }
 });

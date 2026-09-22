@@ -53,6 +53,7 @@ const shortcuts = [
             { desc: "원격 추가", keys: ["git", "remote", "add"] },
             { desc: "원격 변경 가져오기", keys: ["git", "fetch"] },
             { desc: "가져오기 + 병합", keys: ["git", "pull"] },
+            { desc: "폴더 전체 스테이징", keys: ["git", "add", "<folder>/"] },
             { desc: "원격에 푸시", keys: ["git", "push"] },
             { desc: "새 브랜치 첫 푸시", keys: ["git", "push", "-u"] },
             { desc: "강제 푸시 (안전) ⚠️", keys: ["git", "push", "--force-with-lease"] }

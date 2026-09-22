@@ -5,11 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Cheat Sheet | Git · gh CLI 명령어 모음 (한국어)</title>
+    <meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/style.css">
     <style>
+        .git-push-workflow {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem 0;
+        }
+
+        .git-push-panel {
+            padding: 1.5rem;
+            border: 1px solid #dbe3ec;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+        }
+
+        .git-push-panel h2 {
+            font-size: 1.1rem;
+            color: #0f172a;
+        }
+
+        .git-push-panel > p {
+            margin-top: 0.4rem;
+            color: #475569;
+        }
+
+        .git-push-steps {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 0.75rem;
+            margin-top: 1.25rem;
+            list-style: none;
+        }
+
+        .git-push-step {
+            min-width: 0;
+            padding: 1rem;
+            border-radius: 12px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+        }
+
+        .git-push-step-number {
+            display: block;
+            color: #64748b;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .git-push-step strong {
+            display: block;
+            margin: 0.25rem 0 0.6rem;
+            color: #1e293b;
+        }
+
+        .git-command {
+            display: block;
+            overflow-x: auto;
+            padding: 0.6rem 0.7rem;
+            border-radius: 8px;
+            color: #e2e8f0;
+            background: #24292f;
+            font-family: "Fira Code", Consolas, monospace;
+            font-size: 0.8rem;
+            white-space: nowrap;
+        }
+
+        .git-push-note {
+            margin-top: 1rem;
+            color: #92400e;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 900px) {
+            .git-push-steps {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .git-push-workflow {
+                padding: 1rem 1rem 0;
+            }
+
+            .git-push-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
         @media print {
 
             header,
@@ -49,15 +137,17 @@
                 <a href="sheets.html" class="app-tab">Google Sheets</a>
                 <a href="md.html" class="app-tab">Markdown</a>
                 <a href="google.html" class="app-tab">Google Search</a>
-                <a href="chrome.html" class="app-tab">Chrome</a>
                 <a href="win.html" class="app-tab">Windows OS</a>
+                <a href="powertoys.html" class="app-tab">PowerToys</a>
                 <a href="cad.html" class="app-tab">AutoCAD</a>
-                <a href="si.html" class="app-tab">SI 규칙</a>
-                <a href="symbols.html" class="app-tab">특수문자</a>
                 <a href="xg5000.html" class="app-tab">XG5000</a>
+                <a href="codex.html" class="app-tab">Codex</a>
                 <a href="claude.html" class="app-tab">Claude Code</a>
                 <a href="terminal.html" class="app-tab">Terminal</a>
                 <a href="github.html" class="app-tab active">GitHub</a>
+                <a href="chrome.html" class="app-tab">Chrome</a>
+                <a href="symbols.html" class="app-tab">특수문자</a>
+                <a href="si.html" class="app-tab">SI 규칙</a>
             </nav>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="명령어 검색 (예: rebase, stash, gh pr)..."
@@ -73,6 +163,36 @@
         </div>
     </header>
 
+    <section class="git-push-workflow" aria-labelledby="gitPushWorkflowTitle">
+        <div class="git-push-panel">
+            <h2 id="gitPushWorkflowTitle">📁 폴더 변경사항 올리기</h2>
+            <p>현재 폴더에서 수정한 내용을 확인한 뒤, 원하는 폴더만 골라 안전하게 원격 저장소에 올립니다.</p>
+            <ol class="git-push-steps">
+                <li class="git-push-step">
+                    <span class="git-push-step-number">1 · 확인</span>
+                    <strong>변경 상태 보기</strong>
+                    <code class="git-command">git status</code>
+                </li>
+                <li class="git-push-step">
+                    <span class="git-push-step-number">2 · 선택</span>
+                    <strong>폴더 전체 스테이징</strong>
+                    <code class="git-command">git add &lt;folder&gt;/</code>
+                </li>
+                <li class="git-push-step">
+                    <span class="git-push-step-number">3 · 기록</span>
+                    <strong>의미 있는 메시지로 커밋</strong>
+                    <code class="git-command">git commit -m "설명"</code>
+                </li>
+                <li class="git-push-step">
+                    <span class="git-push-step-number">4 · 업로드</span>
+                    <strong>현재 브랜치 푸시</strong>
+                    <code class="git-command">git push</code>
+                </li>
+            </ol>
+            <p class="git-push-note">처음 푸시하는 브랜치라면 <code>git push -u origin &lt;branch&gt;</code>를 사용하세요.</p>
+        </div>
+    </section>
+
     <main id="shortcutGrid">
         <!-- JS로 채워짐 -->
     </main>
@@ -85,6 +205,7 @@
     <script src="../js/shortcut-search.js"></script>
     <script src="../js/github.js"></script>
     <script src="../js/known.js"></script>
+    <script src="../js/enhance.js"></script>
     <script src="../js/shortcut-tools.js"></script>
 </body>
 

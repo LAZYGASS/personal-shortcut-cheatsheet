@@ -1,6 +1,6 @@
 # Shortcut Cheat Sheet Project
 
-여러 프로그램의 핵심 단축키를 프리미엄 디자인(Storyfox 스타일)으로 모아 둔 웹 기반 치트시트입니다. 외부 라이브러리 없이 순수 HTML/CSS/JS로 만들었고, GitHub Pages로 배포됩니다.
+여러 프로그램의 핵심 단축키를 프리미엄 디자인(Storyfox 스타일)으로 모아 둔 웹 기반 치트시트입니다. 외부 라이브러리 없이 순수 HTML/CSS/JS로 만들었고, GitHub Pages 안내와 Vercel 로그인 보호 Preview 배포 설정을 제공합니다.
 
 ## 🚀 Live Demo
 👉 **[https://lazygass.github.io/personal-shortcut-cheatsheet/](https://lazygass.github.io/personal-shortcut-cheatsheet/)**
@@ -11,13 +11,16 @@
 |--------|------|
 | Excel (Win) | Windows 엑셀 핵심 단축키 |
 | Google Sheets | 구글 스프레드시트 단축키 |
-| Markdown | 마크다운 문법 (Obsidian 콜아웃 포함) |
-| Chrome | Windows Chrome의 탭·주소창·북마크·화면·마우스 단축키 |
+| Markdown | 마크다운 문법, 목록 종료 방법, Obsidian 콜아웃 |
 | Google Search | 구글 검색 연산자 |
 | Windows OS | 윈도우 OS 단축키 |
-| AutoCAD | 오토캐드 명령어/단축키 |
-| 특수문자 | 쌍자음 포함 자음+한자 18개 조합·988개 문자 목록·복사 및 Word/Excel·Sheets/AutoCAD 입력법 비교표 |
 | SI 규칙 | kW 대소문자·띄어쓰기·접두어 등 표기 규칙 12개 |
+| 특수문자 | 쌍자음 포함 자음+한자 18개 조합·988개 문자 목록·복사 및 Word/Excel·Sheets/AutoCAD 입력법 비교표 |
+| Chrome | Windows Chrome 단축키·검색·즐겨찾기 |
+| AutoCAD | 오토캐드 명령어/단축키 |
+| Codex | Codex CLI 한국어 치트시트 |
+| PowerPoint | 프레젠테이션 편집 단축키 |
+| XG5000 | PLC 편집 단축키, F0099·F009B 플래그 및 S000.00 스텝 메모 |
 | Claude Code | Claude Code CLI 단축키 (한국어) |
 | Terminal | 터미널/셸 단축키 |
 | GitHub | Git / GitHub 사용법 |
@@ -27,7 +30,7 @@
 - 🔍 **실시간 검색:** 원하는 단축키를 타이핑하면 즉시 필터링. `/` 키로 검색창에 바로 포커스됩니다.
 - ✅ **"내가 아는 단축키" 관리:** 각 줄의 토글로 아는 단축키를 표시하면 흐리게 처리되고, 헤더의 **🙈 아는 것 숨기기** 버튼으로 완전히 감출 수 있습니다. 브라우저에 페이지별로 저장됩니다(localStorage).
 - 🖨️ **인쇄 최적화:** `인쇄하기` 버튼으로 군더더기 없이 A4에 깔끔하게 출력.
-- 📱 **모바일 대응:** 좁은 화면에서는 헤더가 페이지와 함께 스크롤되어 내용을 가리지 않습니다.
+- 📱 **화면 너비 자동 대응:** 가로·세로 모니터와 모바일에서 카드가 1~4열로 자동 배치됩니다. 상단 메뉴는 줄바꿈하고 페이지와 함께 스크롤되어 본문을 가리지 않습니다.
 
 ## 🛠️ 기술 스택 (Tech Stack)
 
@@ -44,20 +47,32 @@
 ```
 personal-shortcut-cheatsheet/
 ├─ index.html          # 루트 → html/index.html로 리다이렉트
-├─ html/               # 각 치트시트 페이지 (index, sheets, md, google, win, cad, claude, terminal, github)
-├─ css/style.css       # 공통 스타일시트
-├─ js/                 # 페이지별 데이터/렌더 스크립트 + known.js(공용: 아는 것 표시/숨기기)
+├─ html/               # 각 치트시트 페이지
+├─ css/                # 공통·특수문자 스타일시트
+├─ js/                 # 페이지 데이터·렌더링·공통 도구
 ├─ md/                 # 마크다운 원본 데이터
+├─ scripts/            # 정적 빌드·엑셀 생성 도구
+│  └─ legacy/          # 과거 생성·일회성 변경 스크립트
+├─ exports/            # 엑셀 참고 파일
+├─ docs/               # 프로젝트 구조 안내
 ├─ CHANGELOG.md        # 변경 이력
-└─ TODO.md             # 할 일 목록
+├─ WORKLOG.md          # 작업·검증 기록
+└─ TODO.md             # 요구사항·할 일 목록
 ```
+
+파일 배치 기준과 로컬 생성물은 [폴더 구조 안내](docs/folder-structure.md)를 참고하세요.
+엑셀 참고 파일은 [exports/Excel_Shortcuts_Reference.xlsx](exports/Excel_Shortcuts_Reference.xlsx)에 있습니다.
+`python scripts/generate_excel.py`로 다시 생성할 수 있습니다(pandas·openpyxl 필요, 기존 파일을 덮어씀).
+`scripts/legacy/`는 과거 작업 보관용이며 현재 사이트 실행·빌드에는 사용하지 않습니다.
 
 ---
 **단축키를 까먹었을 때 당황하지 말고 치트시트를 켜세요! 🚀**
+
+## Vercel 배포
+
+`node scripts/build-static-site.mjs`로 `public/`에 정적 사이트를 생성합니다. Vercel은 해당 폴더를 배포합니다. 현재 운영 방식은 Vercel 로그인 보호 Preview이며, GitHub 자동 배포는 비활성화되어 있어 push만으로 Vercel 사이트가 갱신되지 않습니다.
 
 ## 검색·즐겨찾기
 
 - 카드 페이지에서 설명·카테고리뿐 아니라 키 조합으로 검색합니다. `Ctrl+Shift`와 `ctrl shift`처럼 입력할 수 있고 `+`, `#` 등 기호 자체도 검색할 수 있습니다.
 - 항목의 ☆를 눌러 즐겨찾기를 등록·해제하고, 상단의 **즐겨찾기만 보기**로 모아봅니다. 검색과 **아는 것 숨기기** 조건도 함께 적용됩니다. 즐겨찾기는 페이지별로 현재 브라우저에 저장됩니다.
-
-- 화면 확대·축소 도구와 Ctrl+P/C/X/V의 기본 인쇄·복사·잘라내기·붙여넣기 항목은 사용자 요청으로 제거했습니다. 브라우저 기본 확대는 사용할 수 있습니다.
