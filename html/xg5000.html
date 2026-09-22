@@ -54,15 +54,18 @@
                 <a href="sheets.html" class="app-tab">Google Sheets</a>
                 <a href="md.html" class="app-tab">Markdown</a>
                 <a href="google.html" class="app-tab">Google Search</a>
+                <a href="chrome.html" class="app-tab">Chrome</a>
                 <a href="win.html" class="app-tab">Windows OS</a>
                 <a href="cad.html" class="app-tab">AutoCAD</a>
+                <a href="si.html" class="app-tab">SI 규칙</a>
+                <a href="symbols.html" class="app-tab">특수문자</a>
                 <a href="xg5000.html" class="app-tab active">XG5000</a>
                 <a href="claude.html" class="app-tab">Claude Code</a>
                 <a href="terminal.html" class="app-tab">Terminal</a>
                 <a href="github.html" class="app-tab">GitHub</a>
             </nav>
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search (e.g. 접점, coil, 셋, F3)..."
+                <input type="text" id="searchInput" placeholder="검색: F99, F009B, S000.00, 접점, F3..."
                     autocomplete="off">
                 <kbd>/</kbd>
             </div>
@@ -80,6 +83,7 @@
     </main>
 
     <footer>
+        <p>PLC 메모 출처: <a href="https://ssq.ls-electric.com/uploads/document/17183268442520/XBL-CMEA_T2_Manual_V1.6_202406_KR.pdf" target="_blank" rel="noopener">플래그 일람 A-4</a> · <a href="https://www.ls-electric.com/upload/customer/download/61fb48f7-b041-4b35-a2ce-3ba60371c47c/XGB%20Hardware%20English%20ManualV1.7.pdf" target="_blank" rel="noopener">XGB 메모리 구성 5-33</a> · <a href="https://sol.ls-electric.com/uploads/document/16408293242570/XBC_UP_Positioning_Tutorial_V1.2.pdf" target="_blank" rel="noopener">스텝 사용 예 26/28</a>. 실제 CPU 모델과 프로그램은 별도 확인이 필요합니다.</p>
         <p>Copyright &copy; 2024. Designed by Antigravity. Inspired by <b>Storyfox</b>.</p>
         <p style="margin-top: 8px; opacity: 0.7;">XG5000 <b>기본(Default) 단축키</b> 기준 · [도구] → [단축키]에서 사용자화 가능. 심볼 입력키는 XG5000 LD 편집 매뉴얼 기준.</p>
 
@@ -93,8 +97,10 @@
         </div>
     </footer>
 
+    <script src="../js/shortcut-search.js"></script>
     <script src="../js/xg5000.js"></script>
     <script src="../js/known.js"></script>
+    <script src="../js/shortcut-tools.js"></script>
 </body>
 
 </html>

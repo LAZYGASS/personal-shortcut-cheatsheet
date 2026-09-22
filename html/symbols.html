@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자주 쓰는 특수문자 | 단위 · 파이 · 체크 복사</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/symbols.css">
+    <style>
+        :root {
+            --accent-color: #6d28d9;
+            /* Symbols */
+        }
+
+        @media print {
+
+            header,
+            footer,
+            .search-bar {
+                display: none !important;
+            }
+
+            body {
+                padding-top: 0;
+            }
+
+            main {
+                columns: 2 !important;
+                padding: 0;
+            }
+
+            .card {
+                break-inside: avoid;
+                border: 1px solid #eee;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-content">
+            <div class="brand">
+                <div class="logo">Ω</div>
+                <h1>자주 쓰는 특수문자</h1>
+            </div>
+            <nav class="app-tabs">
+                <a href="index.html" class="app-tab">Excel (Win)</a>
+                <a href="ppt.html" class="app-tab">PowerPoint</a>
+                <a href="sheets.html" class="app-tab">Google Sheets</a>
+                <a href="md.html" class="app-tab">Markdown</a>
+                <a href="google.html" class="app-tab">Google Search</a>
+                <a href="chrome.html" class="app-tab">Chrome</a>
+                <a href="win.html" class="app-tab">Windows OS</a>
+                <a href="cad.html" class="app-tab">AutoCAD</a>
+                <a href="si.html" class="app-tab">SI 규칙</a>
+                <a href="symbols.html" class="app-tab active">특수문자</a>
+                <a href="xg5000.html" class="app-tab">XG5000</a>
+                <a href="claude.html" class="app-tab">Claude Code</a>
+                <a href="terminal.html" class="app-tab">Terminal</a>
+                <a href="github.html" class="app-tab">GitHub</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="검색: SI, kW, 띄어쓰기, 파이, 체크…"
+                    autocomplete="off">
+                <kbd>/</kbd>
+            </div>
+            <div class="actions">
+                <button onclick="window.print()"
+                    style="padding: 8px 16px; border-radius: 8px; border: 1px solid #e2e8f0; background: white; cursor: pointer; font-size: 0.875rem; font-weight: 500;">
+                    🖨️ 인쇄하기
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="symbol-intro">
+        <p><b>자음 입력 → 한자 키 → 문자 선택.</b> 쌍자음을 포함한 18개 조합의 문자 988개를 모았습니다. 여기서는 문자를 눌러 바로 복사하세요.</p>
+        <p id="copyStatus" role="status" aria-live="polite">ㄹ: 단위 · ㅊ: 분수/첨자 · ㄲ: Ø/ø · ㅎ: Φ/π/Ω</p>
+        <div id="manualCopy" hidden><label for="copyText">자동 복사가 막혔습니다. 선택된 문자를 Ctrl+C / Command+C 또는 길게 눌러 복사하세요.</label><input id="copyText" readonly></div>
+    </div>
+
+    <div class="symbol-subnav" role="tablist" aria-label="특수문자 보기">
+        <button type="button" id="symbolsTab" role="tab" aria-selected="true" aria-controls="shortcutGrid" data-symbol-view="symbols">문자 모음</button>
+        <button type="button" id="methodsTab" role="tab" aria-selected="false" aria-controls="inputMethodsPanel" tabindex="-1" data-symbol-view="methods">프로그램별 입력법</button>
+    </div>
+    <main id="shortcutGrid" class="symbol-methods" role="tabpanel" aria-labelledby="symbolsTab">
+        <!-- JS로 채워짐 -->
+    </main>
+
+    <section id="inputMethodsPanel" class="input-methods-panel" role="tabpanel" aria-labelledby="methodsTab" hidden>
+        <p>Windows 기준 · Word는 <b>코드 입력 후 Alt+X</b>, Excel·Google Sheets는 <b>한글 입력기 또는 붙여넣기</b>, AutoCAD는 <b>문자(TEXT/MTEXT) 편집 중 코드 입력</b>입니다. 기호를 누르면 복사됩니다.</p>
+        <table class="input-methods-table">
+            <caption>자주 쓰는 문자 22개의 프로그램별 입력 방법</caption>
+            <thead><tr><th scope="col">문자</th><th scope="col">Word</th><th scope="col">Excel · Google Sheets</th><th scope="col">AutoCAD</th></tr></thead>
+            <tbody id="inputMethodsRows"></tbody>
+        </table>
+        <p id="inputMethodsEmpty" role="status" hidden>일치하는 입력법이 없습니다. 검색어를 바꿔보세요.</p>
+        <details class="method-details"><summary>입력할 때 알아둘 점 · 출처</summary>
+            <p>Alt+X는 Word 등 지원 앱용입니다. Excel·Google Sheets·AutoCAD 공통 단축키가 아닙니다. Alt 숫자 코드는 Num Lock을 켜고 숫자패드로 입력하며, Windows 언어·앱에 따라 결과가 다를 수 있습니다.</p>
+            <p>표의 ²·₂ 등은 문자 자체입니다. Excel에서 임의의 글자에 첨자 서식을 적용하려면 셀 편집 중 글자를 선택하고 Ctrl+1 → 위 첨자/아래 첨자를 사용합니다. Google Sheets에서는 해당 문자 복사를 이용하세요. 숫자 셀에 단위·분수를 문자로 붙이면 계산용 숫자와는 달라집니다.</p>
+            <p>AutoCAD 코드는 명령줄이 아니라 문자 편집 영역에 넣습니다. %%c는 지름을 표시하며 글꼴에 따라 모양이 다를 수 있습니다. Unicode 문자는 지원 글꼴이 필요합니다. 임의 분수를 위아래로 쌓으려면 MTEXT에서 1/2 입력 → 선택 → 우클릭 → 스택(Stack)을 사용합니다.</p>
+            <p><a href="https://support.microsoft.com/en-gb/word/insert-ascii-or-unicode-latin-based-symbols-and-characters" target="_blank" rel="noopener">Microsoft 문자 코드</a> · <a href="https://support.microsoft.com/en-us/excel/format-text-or-numbers-as-superscript-or-subscript" target="_blank" rel="noopener">Excel 첨자 서식</a> · <a href="https://www.autodesk.com/blogs/autocad/adding-diameter-symbol-autocad-drawings/" target="_blank" rel="noopener">AutoCAD 지름·Unicode</a> · <a href="https://help.autodesk.com/cloudhelp/2025/ENU/AutoCAD-LT-MAC/files/GUID-518E1A9D-398C-4A8A-AC32-2D85590CDBE1.htm" target="_blank" rel="noopener">AutoCAD 문자 코드표</a></p>
+        </details>
+    </section>
+
+    <footer><p>MS 호환 문자표 18개 조합·988개 기준입니다. ㅉ은 참조 문자표에 목록이 없습니다. 실제 Windows 입력기·버전의 후보와는 차이가 있을 수 있습니다. <a href="https://learn.microsoft.com/en-us/globalization/input/korean-ime" target="_blank" rel="noopener">Microsoft 입력기 안내</a> · <a href="https://github.com/libhangul/libhangul/blob/386f73c85f28b63604cd2ccb65e3ef497e213ff8/data/hanja/mssymbol.txt" target="_blank" rel="noopener">자음별 문자표 대조</a></p><p>문자 구분 참고: <a href="https://www.unicode.org/charts/nameslist/n_2300.html" target="_blank" rel="noopener">Unicode 지름 기호 U+2300</a> · <a href="../md/symbols.md">특수문자 원본 목록</a></p></footer>
+
+    <script src="../js/hanja-symbols.js"></script>
+    <script src="../js/symbols.js"></script>
+    <script src="../js/shortcut-tools.js"></script>
+    <script src="../js/symbol-input-methods.js"></script>
+</body>
+
+</html>

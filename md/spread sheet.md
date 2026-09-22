@@ -17,10 +17,6 @@ F4"
 "저장
 (모든 변경사항은 드라이브에 자동으로 저장됨)" Ctrl + s
 열기 Ctrl + o
-인쇄 Ctrl + p
-복사 Ctrl + c
-잘라내기 Ctrl + x
-붙여넣기 Ctrl + v
 값만 붙여넣기 Ctrl + Shift + v
 대표적인 단축키 표시 Ctrl + /
 새 시트 삽입 Shift + F11

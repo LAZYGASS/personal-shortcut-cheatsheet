@@ -24,7 +24,6 @@ const shortcuts = [
             { desc: "다른 이름으로 저장", keys: ["F12"] },
             { desc: "통합문서 열기", keys: ["Ctrl", "O"] },
             { desc: "새 통합문서 만들기", keys: ["Ctrl", "N"] },
-            { desc: "인쇄하기", keys: ["Ctrl", "P"] },
             { desc: "도움말 열기", keys: ["F1"] },
             { desc: "통합문서 닫기", keys: ["Ctrl", "W"] },
             { desc: "엑셀 종료", keys: ["Alt", "F4"] }
@@ -50,7 +49,6 @@ const shortcuts = [
         color: "#8764b8",
         icon: "🎨",
         items: [
-            { desc: "복사하기 / 붙여넣기", keys: ["Ctrl", "C/V"] },
             { desc: "선택하여 붙여넣기", keys: ["Ctrl", "Alt", "V"] },
             { desc: "셀 서식 대화상자", keys: ["Ctrl", "1"] },
             { desc: "글꼴 서식 지정", keys: ["Ctrl", "Shift", "F"] },
@@ -114,10 +112,7 @@ function renderShortcuts(filter = "") {
     grid.innerHTML = "";
 
     shortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item =>
-            item.desc.toLowerCase().includes(filter.toLowerCase()) ||
-            cat.category.toLowerCase().includes(filter.toLowerCase())
-        );
+        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
 
         if (filteredItems.length > 0) {
             const card = document.createElement('section');

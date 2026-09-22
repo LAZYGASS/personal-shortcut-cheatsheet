@@ -16,10 +16,6 @@ const sheetsShortcuts = [
             { desc: "오른쪽으로 채우기", keys: ["Ctrl", "R"] },
             { desc: "저장", keys: ["Ctrl", "S"] },
             { desc: "열기", keys: ["Ctrl", "O"] },
-            { desc: "인쇄", keys: ["Ctrl", "P"] },
-            { desc: "복사", keys: ["Ctrl", "C"] },
-            { desc: "잘라내기", keys: ["Ctrl", "X"] },
-            { desc: "붙여넣기", keys: ["Ctrl", "V"] },
             { desc: "값만 붙여넣기", keys: ["Ctrl", "Shift", "V"] },
             { desc: "전체 단축키 표시", keys: ["Ctrl", "/"] },
             { desc: "새 시트 삽입", keys: ["Shift", "F11"] },
@@ -157,10 +153,7 @@ function renderShortcuts(filter = "") {
     grid.innerHTML = "";
 
     sheetsShortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item =>
-            item.desc.toLowerCase().includes(filter.toLowerCase()) ||
-            cat.category.toLowerCase().includes(filter.toLowerCase())
-        );
+        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
 
         if (filteredItems.length > 0) {
             const card = document.createElement('section');

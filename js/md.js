@@ -30,6 +30,8 @@ const mdShortcuts = [
             { desc: "순서 없는 목록 (Unordered)", keys: ["- 항목"] },
             { desc: "순서 없는 대체 기호", keys: ["* 항목"] },
             { desc: "순서 있는 목록 (Ordered)", keys: ["1. 항목"] },
+            { desc: "목록 끝내기 → 일반 문장 (자동 목록 편집기: 빈 번호·글머리 줄에서 Enter 한 번 더, 편집기마다 다름)", keys: ["Enter 두 번"] },
+            { desc: "목록이 계속될 때 (직접 편집): 빈 번호·글머리와 들여쓰기 삭제 후 빈 줄을 두고 일반 문장 입력", keys: ["번호·들여쓰기 삭제", "빈 줄"] },
             { desc: "할 일 목록 (빈 체크박스)", keys: ["- [ ] 할일"] },
             { desc: "할 일 목록 (완료)", keys: ["- [x] 완료"] }
         ]
@@ -106,10 +108,7 @@ function renderShortcuts(filter = "") {
     grid.innerHTML = "";
 
     mdShortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item =>
-            item.desc.toLowerCase().includes(filter.toLowerCase()) ||
-            cat.category.toLowerCase().includes(filter.toLowerCase())
-        );
+        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
 
         if (filteredItems.length > 0) {
             const card = document.createElement('section');

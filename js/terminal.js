@@ -136,11 +136,7 @@ function renderShortcuts(filter = "") {
     grid.innerHTML = "";
 
     shortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item =>
-            item.desc.toLowerCase().includes(filter.toLowerCase()) ||
-            cat.category.toLowerCase().includes(filter.toLowerCase()) ||
-            item.keys.join(' ').toLowerCase().includes(filter.toLowerCase())
-        );
+        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
 
         if (filteredItems.length > 0) {
             const card = document.createElement('section');

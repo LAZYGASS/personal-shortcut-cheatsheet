@@ -331,14 +331,55 @@ footer {
     font-size: 0.85rem;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
+/* Screen layout follows the available width, including portrait monitors.
+   Keep the header in flow because wrapping navigation has a variable height. */
+@media screen {
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        position: static;
+    }
+
+    .header-content,
     main {
-        columns: 2;
+        max-width: 1920px;
+    }
+
+    main {
+        columns: 4 380px;
+    }
+
+    .header-content > *,
+    .desc,
+    .keys {
+        min-width: 0;
+    }
+
+    .app-tabs,
+    .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        max-width: 100%;
+    }
+
+    .search-bar {
+        min-width: min(250px, 100%);
+    }
+
+    .desc,
+    .keys kbd {
+        overflow-wrap: anywhere;
+    }
+
+    .keys {
+        max-width: 60%;
     }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     /* On mobile the stacked header is too tall for a fixed 90px offset,
        so let it scroll away with the page instead of covering content. */
     body {
@@ -364,4 +405,17 @@ footer {
         columns: 1;
         padding: 1rem;
     }
+}
+
+/* Search/favorite state remains consistent for screen and print. */
+.shortcut-item[hidden], .card[hidden], .shortcut-empty[hidden], .storage-notice[hidden] { display: none !important; }
+.utility-button { padding: 8px 14px; border: 1px solid #cbd5e1; border-radius: 8px; background: white; color: #334155; cursor: pointer; font: inherit; font-size: .875rem; }
+.utility-button[aria-pressed="true"] { background: #fef3c7; border-color: #d97706; color: #78350f; }
+.favorite-star { flex: 0 0 28px; width: 28px; height: 32px; padding: 0; margin-right: 6px; border: 0; border-radius: 6px; background: transparent; color: #64748b; font-size: 1.25rem; cursor: pointer; }
+.favorite-star[aria-pressed="true"] { color: #a16207; background: #fef3c7; }
+.favorite-star:focus-visible, .utility-button:focus-visible { outline: 3px solid #2563eb; outline-offset: 2px; }
+.shortcut-empty, .storage-notice { padding: 1rem; text-align: center; color: #475569; }
+@media print {
+    .favorite-star, .storage-notice { display: none !important; }
+    body { padding-bottom: 0; }
 }

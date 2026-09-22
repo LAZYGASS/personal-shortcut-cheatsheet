@@ -1,5 +1,27 @@
 const winShortcuts = [
     {
+        category: "PLC 플래그 메모 (XGB 계열 참고)",
+        color: "#DA291C",
+        icon: "💡",
+        items: [
+            { desc: "F0099 · _ON · 항상 ON — F99 ON으로 기억한 항목. PLC RUN 중 매 스캔 참인 조건으로 사용합니다. 키보드 단축키가 아닌 특수 릴레이 주소입니다.", keys: [] },
+            { desc: "F009B · _1ON · 최초 1스캔 ON — PLC가 RUN을 시작한 첫 스캔에만 켜지는 플래그. 초기값 설정 등 시작할 때 한 번 실행할 처리에 사용합니다.", keys: [] },
+            { desc: "F009B의 한 번 = RUN 시작 후 첫 스캔 — XG5000 편집기를 여는 순간이 아닙니다. STOP → RUN으로 다시 시작하면 첫 스캔이 다시 발생합니다. 1스캔은 프로그램을 한 차례 처리하는 주기입니다.", keys: [] },
+            { desc: "주소 확인 — 위 표기는 XGB 계열 공식 자료 기준입니다. 실제 CPU 모델·언어의 플래그 일람을 확인하세요. F0099와 F00099처럼 자릿수가 다른 주소를 다른 기종에 그대로 옮겨 쓰지 않습니다.", keys: [] }
+        ]
+    },
+    {
+        category: "S000.00 · 스텝 순서 제어 메모",
+        color: "#0072CE",
+        icon: "🔢",
+        items: [
+            { desc: "S000.00 — S는 스텝 컨트롤러(스텝 릴레이), 000은 그룹 번호, .00은 그 그룹의 0번 스텝입니다. 소수나 시간 값이 아니라 순서 제어에 쓰는 주소입니다.", keys: [] },
+            { desc: "S000.00이 ON — 해당 스텝이 활성 상태라는 뜻입니다. 접점으로 사용하면 그 스텝일 때 조건이 참이 됩니다. 초기·대기·운전 중 어떤 의미인지는 프로그램 작성자가 정합니다.", keys: [] },
+            { desc: "S000.00 → S000.01 → S000.02 — 대기 → 운전 → 완료처럼 단계를 나누는 설명용 예시입니다. 주소만 적으면 자동 진행되는 것은 아니며, 전환 조건과 스텝 설정 로직이 필요합니다.", keys: [] },
+            { desc: "F009B와 S000.00 연결 — 시작 첫 스캔에 초기 스텝을 설정하는 용도로 조합할 수 있습니다. 실제 초기화 방식·유지 설정은 해당 CPU와 프로그램에서 확인합니다. 사용자 프로그램에서 이 연결이 구현됐는지는 미확인입니다.", keys: [] }
+        ]
+    },
+    {
         category: "LD 심볼 입력 (핵심)",
         color: "#DA291C", // LS ELECTRIC Red
         icon: "⭐",
@@ -35,9 +57,6 @@ const winShortcuts = [
         items: [
             { desc: "실행 취소 (Undo)", keys: ["Ctrl", "Z"] },
             { desc: "다시 실행 (Redo)", keys: ["Ctrl", "Y"] },
-            { desc: "복사하기", keys: ["Ctrl", "C"] },
-            { desc: "잘라내기", keys: ["Ctrl", "X"] },
-            { desc: "붙여넣기", keys: ["Ctrl", "V"] },
             { desc: "전체 선택", keys: ["Ctrl", "A"] },
             { desc: "객체 속성 (Properties)", keys: ["Ctrl", "F3"] },
             { desc: "행 삽입", keys: ["Ctrl", "Shift", "Insert"] },
@@ -52,7 +71,6 @@ const winShortcuts = [
             { desc: "프로젝트 저장", keys: ["Ctrl", "S"] },
             { desc: "프로젝트 열기", keys: ["Ctrl", "O"] },
             { desc: "새 프로젝트", keys: ["Ctrl", "N"] },
-            { desc: "인쇄하기", keys: ["Ctrl", "P"] },
             { desc: "프로그램 검사 (컴파일)", keys: ["Ctrl", "Alt", "C"] },
             { desc: "온라인 접속 / 해제", keys: ["Ctrl", "Alt", "O"] }
         ]
@@ -77,11 +95,7 @@ function renderShortcuts(filter = "") {
     grid.innerHTML = "";
 
     winShortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item =>
-            item.desc.toLowerCase().includes(filter.toLowerCase()) ||
-            cat.category.toLowerCase().includes(filter.toLowerCase()) ||
-            item.keys.join(" ").toLowerCase().includes(filter.toLowerCase())
-        );
+        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
 
         if (filteredItems.length > 0) {
             const card = document.createElement('section');

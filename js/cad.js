@@ -53,7 +53,8 @@ const cadShortcuts = [
         icon: "🎨",
         items: [
             { desc: "도면층 특성 (Layer)", keys: ["LA", "Space"] },
-            { desc: "특성 창 (Properties)", keys: ["PR", "Space"] },
+            { desc: "특성 창 (Properties → 선가중치)", keys: ["Ctrl", "1"] },
+            { desc: "특성 창 (Properties, 별칭)", keys: ["CH", "Space"] },
             { desc: "특성 일치 (Match Prop)", keys: ["MA", "Space"] },
             { desc: "거리 측정 (Distance)", keys: ["DI", "Space"] },
             { desc: "면적 계산 (Area)", keys: ["AA", "Space"] }
@@ -93,10 +94,7 @@ function renderShortcuts(filter = "") {
     grid.innerHTML = "";
 
     cadShortcuts.forEach(cat => {
-        const filteredItems = cat.items.filter(item =>
-            item.desc.toLowerCase().includes(filter.toLowerCase()) ||
-            cat.category.toLowerCase().includes(filter.toLowerCase())
-        );
+        const filteredItems = cat.items.filter(item => matchesShortcut(item, cat.category, filter));
 
         if (filteredItems.length > 0) {
             const card = document.createElement('section');

@@ -16,10 +16,6 @@
 | 오른쪽으로 채우기 | `Ctrl + R` |
 | 저장 | `Ctrl + S` |
 | 열기 | `Ctrl + O` |
-| 인쇄 | `Ctrl + P` |
-| 복사 | `Ctrl + C` |
-| 잘라내기 | `Ctrl + X` |
-| 붙여넣기 | `Ctrl + V` |
 | 값만 붙여넣기 | `Ctrl + Shift + V` |
 | 전체 단축키 표시 | `Ctrl + /` |
 | 새 시트 삽입 | `Shift + F11` |

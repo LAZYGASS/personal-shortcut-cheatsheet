@@ -47,7 +47,8 @@
 | 설명 (Description) | 단축키 / 문법 (Shortcut) |
 |:---|:---|
 | 도면층 특성 (Layer) | `LA + Space` |
-| 특성 창 (Properties) | `PR + Space` |
+| 특성 창 (Properties → 선가중치) | `Ctrl + 1` |
+| 특성 창 (Properties, 별칭) | `CH + Space` |
 | 특성 일치 (Match Prop) | `MA + Space` |
 | 거리 측정 (Distance) | `DI + Space` |
 | 면적 계산 (Area) | `AA + Space` |
