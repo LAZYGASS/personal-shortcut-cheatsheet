@@ -24,6 +24,7 @@ const shortcuts = [
             { desc: "다른 이름으로 저장", keys: ["F12"] },
             { desc: "통합문서 열기", keys: ["Ctrl", "O"] },
             { desc: "새 통합문서 만들기", keys: ["Ctrl", "N"] },
+            { desc: "새 창으로 보기 (같은 파일, 순서대로 누르기)", keys: ["Alt", "W", "N"] },
             { desc: "도움말 열기", keys: ["F1"] },
             { desc: "통합문서 닫기", keys: ["Ctrl", "W"] },
             { desc: "엑셀 종료", keys: ["Alt", "F4"] }

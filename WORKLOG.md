@@ -1,5 +1,12 @@
 # 작업 기록
 
+## 2026-09-28 — Excel 새 창으로 보기·Windows 프로그램 창 닫기
+
+- 파일 및 일반 카드와 원본 Markdown에 같은 파일을 새 창으로 보는 Alt → W → N 항목을 추가하고, 순서대로 누르는 키임을 명시했다.
+- Windows 창 관리 카드와 원본 Markdown에 현재 프로그램 창 닫기(Alt + F4)를 추가하고 README에도 반영했다.
+- 검증: JavaScript 문법 및 git diff 공백 검사 통과. Browser 연결 불가로 실제 화면·검색은 미검증(UNVERIFIED).
+- Git 반영 준비: origin/master와 커밋 차이 0/0 확인, README·TODO·WORKLOG 및 GitHub 한글 Description·관련 Topics 확인. README의 Excel 소개에 새 창 단축키를 반영했다.
+
 ## 2026-09-19 — 폴더 정리
 
 - 원격 fetch 후 master와 origin/master의 차이 0/0, 미커밋 변경 없음 확인.

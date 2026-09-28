@@ -9,11 +9,11 @@
 
 | 페이지 | 내용 |
 |--------|------|
-| Excel (Win) | Windows 엑셀 핵심 단축키 |
+| Excel (Win) | Windows 엑셀 핵심 단축키, 같은 파일 새 창으로 보기(Alt → W → N) |
 | Google Sheets | 구글 스프레드시트 단축키 |
 | Markdown | 마크다운 문법, 목록 종료 방법, Obsidian 콜아웃 |
 | Google Search | 구글 검색 연산자 |
-| Windows OS | 윈도우 OS 단축키 |
+| Windows OS | 윈도우 OS 단축키, 현재 프로그램 창 닫기(Alt + F4) |
 | SI 규칙 | kW 대소문자·띄어쓰기·접두어 등 표기 규칙 12개 |
 | 특수문자 | 쌍자음 포함 자음+한자 18개 조합·988개 문자 목록·복사 및 Word/Excel·Sheets/AutoCAD 입력법 비교표 |
 | Chrome | Windows Chrome 단축키·검색·즐겨찾기 |

@@ -18,6 +18,7 @@ const winShortcuts = [
         icon: "🖥️",
         items: [
             { desc: "바탕 화면 표시/숨기기", keys: ["Win", "D"] },
+            { desc: "현재 프로그램 창 닫기", keys: ["Alt", "F4"] },
             { desc: "모든 창 최소화", keys: ["Win", "M"] },
             { desc: "마우스 커서 가져다대기 (바탕화면 엿보기)", keys: ["Win", ","] },
             { desc: "화면 분할 / 창 고정/최대화", keys: ["Win", "방향키"] },

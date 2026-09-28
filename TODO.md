@@ -1,5 +1,10 @@
 # TODO
 
+## Excel 새 창으로 보기
+
+- [ ] R8-25 | 같은 파일을 새 창으로 보는 단축키 추가 | js/app.js, md/excel_shortcuts.md | 두 파일에 Alt → W → N 반영. JS 문법·diff 확인, 브라우저 연결 불가로 실제 화면·검색 미검증
+- [ ] R8-26 | 현재 Windows 프로그램 창 닫기 추가 | js/win.js, md/win_shortcuts.md | 두 파일에 Alt + F4 반영. 브라우저 연결 불가로 실제 화면·검색 미검증
+
 ## 폴더 정리
 
 - [ ] R8-23 | 생성 도구·엑셀 파일을 용도별 폴더로 이동 | scripts/, exports/ | 이동 완료: 엑셀 Git 해시 동일·웹 파일 보존·Python 문법 확인. 정적 빌드·JS 문법 검사는 Node 무출력 종료로 미검증, 엑셀 재생성은 pandas 부재로 미검증
